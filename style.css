@@ -1,0 +1,56 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: #f0fdf4;
+  overflow-x: hidden;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.flower {
+  position: absolute;
+  font-size: 2rem;
+  animation: bloom 1s ease-out forwards;
+}
+
+@keyframes bloom {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translateY(-50px);
+    opacity: 0;
+  }
+}
+
+#poem-container {
+  margin-top: 30px;
+  padding: 20px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none;
+}
