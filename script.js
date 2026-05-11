@@ -32,10 +32,23 @@ btn.addEventListener('click', () => {
 function createFlower() {
     const flower = document.createElement('div');
     flower.classList.add('flower');
-    flower.innerText = ['🌸', '🌼', '🌷', '🌺', '🌻'][Math.floor(Math.random() * 5)];
-    flower.style.left = Math.random() * 100 + "vw";
-    flower.style.top = Math.random() * 100 + "vh";
+
+    // Choose a random flower/heart emoji
+    const types = ['🌸', '🌼', '🌷', '🌺', '🌻', '✨', '🤍'];
+    flower.innerText = types[Math.floor(Math.random() * types.length)];
+
+    // Randomize position across the whole screen
+    const x = Math.random() * 90; // Using 90 to keep them slightly off the edges
+    const y = Math.random() * 90;
+
+    // Random rotation for a natural look
+    const rotation = Math.random() * 360;
+    flower.style.setProperty('--rotation', `${rotation}deg`);
+
+    flower.style.left = x + "vw";
+    flower.style.top = y + "vh";
+
     document.body.appendChild(flower);
 
-    setTimeout(() => flower.remove(), 1000);
+    // We removed the setTimeout, so the flower stays forever!
 }
